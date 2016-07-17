@@ -64,7 +64,7 @@
     <article id="post-谈谈css页面布局之浮动" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2016/07/17/谈谈css页面布局之浮动/" class="article-date">
-  <time datetime="2016-07-17T09:08:42.864Z" itemprop="datePublished">2016-07-17</time>
+  <time datetime="2016-07-17T09:56:10.646Z" itemprop="datePublished">2016-07-17</time>
 </a>
     
   </div>
@@ -73,27 +73,27 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>#谈谈css页面布局之浮动<br>标签（空格分隔）： css 浮动与定位</p>
+        <h1 id="谈谈css页面布局之浮动"><a href="#谈谈css页面布局之浮动" class="headerlink" title="谈谈css页面布局之浮动"></a>谈谈css页面布局之浮动</h1><p>标签（空格分隔）： css 浮动与定位</p>
 <p>—阅读《css权威指南》后对浮动有了一些更细致的了解，以下是我的读书笔记和个人理解。</p>
 <blockquote>
 <p>过去，只可能浮动图像（某些浏览器可能还支持表的浮动）。但css允许浮动任何元素，从图像到段落再到列表，所有元素都可以浮动。在css中，这种行为使用属性float实现。                                  ————《css权威指南》</p>
 </blockquote>
-<p>##何为浮动<br>float 属性定义元素在哪个方向浮动。浮动元素会生成一个块级框，而不论其本身是哪种元素。float属性可能的值有left，right，inherit，none。</p>
-<p>##浮动层<br>float属性使元素脱离文本流，其外边距紧贴于父元素内边距进行浮动。<br>而此浮动元素在文档流空出的位置，由后续的(非浮动)元素填充上去。</p>
-<p>##浮动特点<br>浮动元素几乎自成一派，但会对文档剩余部分有影响。一个元素浮动时，其他内容会环绕该元素。另外，无论该元素本身是什么，浮动元素都会生成一个块级框。即使原本是行内元素，通常都会生成一个行内框。</p>
-<p>###浮动元素外边框不合并<br><img src="http://7xwgi3.com1.z0.glb.clouddn.com/2.jpg" alt="外边框不合并示意图"></p>
+<h2 id="何为浮动"><a href="#何为浮动" class="headerlink" title="何为浮动"></a>何为浮动</h2><p>float 属性定义元素在哪个方向浮动。浮动元素会生成一个块级框，而不论其本身是哪种元素。float属性可能的值有left，right，inherit，none。</p>
+<h2 id="浮动层"><a href="#浮动层" class="headerlink" title="浮动层"></a>浮动层</h2><p>float属性使元素脱离文本流，其外边距紧贴于父元素内边距进行浮动。<br>而此浮动元素在文档流空出的位置，由后续的(非浮动)元素填充上去。</p>
+<h2 id="浮动特点"><a href="#浮动特点" class="headerlink" title="浮动特点"></a>浮动特点</h2><p>浮动元素几乎自成一派，但会对文档剩余部分有影响。一个元素浮动时，其他内容会环绕该元素。另外，无论该元素本身是什么，浮动元素都会生成一个块级框。即使原本是行内元素，通常都会生成一个行内框。</p>
+<h3 id="浮动元素外边框不合并"><a href="#浮动元素外边框不合并" class="headerlink" title="浮动元素外边框不合并"></a>浮动元素外边框不合并</h3><p><img src="http://7xwgi3.com1.z0.glb.clouddn.com/2.jpg" alt="外边框不合并示意图"></p>
 <p>  如图所示两个正方向均有20px的外边距，但红色方块上边距与黑色方块下边距并不会合并，而是变成40px。</p>
-<p>##浮动的规则<br>1.浮动元素的左（右）外边界不能超出其包含块的左（右）内边界<br>2.为了避免产生重叠，浮动元素的左（右）外边界必须是先前出现的浮动元素的右（左）外边界。后出现的浮动元素的顶端在先出现元素的底部这种情况也是合理的。这是浮动不同于定位的一点，这样一来所有的浮动内容都是可见的。<br>3.浮动元素不能超过其包含元素的边界，除非他本身就宽于包含元素。如图1所示，在width为450px的容器中，两个200px的方块加上20px的外边距显然会超出边界。这是浮动元素会被挤到新一行。<br>4.一个浮动元素的顶端不能比之前所有浮动元素或块级元素顶端高。</p>
+<h2 id="浮动的规则"><a href="#浮动的规则" class="headerlink" title="浮动的规则"></a>浮动的规则</h2><p>1.浮动元素的左（右）外边界不能超出其包含块的左（右）内边界<br>2.为了避免产生重叠，浮动元素的左（右）外边界必须是先前出现的浮动元素的右（左）外边界。后出现的浮动元素的顶端在先出现元素的底部这种情况也是合理的。这是浮动不同于定位的一点，这样一来所有的浮动内容都是可见的。<br>3.浮动元素不能超过其包含元素的边界，除非他本身就宽于包含元素。如图1所示，在width为450px的容器中，两个200px的方块加上20px的外边距显然会超出边界。这是浮动元素会被挤到新一行。<br>4.一个浮动元素的顶端不能比之前所有浮动元素或块级元素顶端高。</p>
 <pre><code>&lt;div class=&quot;black&quot;&gt; &lt;/div&gt;
 &lt;div class=&quot;red&quot;&gt; &lt;/div&gt;
 </code></pre><p>在代码行中黑色方块的出现先于2红色方块，这就是为什么换行时红色方块下落。同样的，交换书写顺序将使黑块下落。<br>5.行内框和浮动元素重叠，前者的背景，内容等都将显示在后者之上。而块框元素与之重叠时，背景在后者之下，内容在后者之上。<br><img src="http://7xwgi3.com1.z0.glb.clouddn.com/2016-07-17_164909.png" alt="浮动元素与行内框、块框重叠示意图"></p>
-<p>##负边距与浮动<br>使用负边距可以使浮动元素移出其父元素。乍一看好像觉得与前面所说的相矛盾，但仔细想想，当外边界是负值时，相当于父元素的外边界贴于浮动元素内，因此移出父元素属于合理想象。</p>
-<p>##clear的使用<br>有时我们不想某些内容某个方向出现浮动元素，这时可以借助clear去解决。例如我想让浮动的图片呈竖向排列，就可以<code>img{float:left;clear:both;}</code><br>ps:clear的值有none，both，inherit，left，right五种。</p>
+<h2 id="负边距与浮动"><a href="#负边距与浮动" class="headerlink" title="负边距与浮动"></a>负边距与浮动</h2><p>使用负边距可以使浮动元素移出其父元素。乍一看好像觉得与前面所说的相矛盾，但仔细想想，当外边界是负值时，相当于父元素的外边界贴于浮动元素内，因此移出父元素属于合理想象。</p>
+<h2 id="clear的使用"><a href="#clear的使用" class="headerlink" title="clear的使用"></a>clear的使用</h2><p>有时我们不想某些内容某个方向出现浮动元素，这时可以借助clear去解决。例如我想让浮动的图片呈竖向排列，就可以<code>img{float:left;clear:both;}</code><br>ps:clear的值有none，both，inherit，left，right五种。</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/07/17/谈谈css页面布局之浮动/" data-id="ciqqf7iwg0000d49wmd710ljg" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/07/17/谈谈css页面布局之浮动/" data-id="ciqqfhei70001ps9wj7idagev" class="article-share-link">Share</a>
       
       
     </footer>
@@ -138,7 +138,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/07/16/hello-world/" data-id="ciqqf7ix10001d49wrst72n56" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/07/16/hello-world/" data-id="ciqqfhefk0000ps9wxrmw4mcq" class="article-share-link">Share</a>
       
       
     </footer>
