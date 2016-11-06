@@ -1,0 +1,613 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="标签：JavaScript– 该部分是我学习引用类型时做的笔记，下面直入主题。
+正则表达式规则ECMAScript通过RegExp类型来支持正则表达式，可以通过以下途径创建：
+var example = / pattern / flags ;
+pattern可以是任何形式的正则表达式，而flags则用以表明正则表达式的行为。flags由以下三种形式
+
+g：表示global，即模式将被用于所有字符串">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JS引用类型之RegExp类型">
+<meta property="og:url" content="http://yoursite.com/2016/08/01/title- JS引用类型之RegExp类型/index.html">
+<meta property="og:site_name" content="Momo">
+<meta property="og:description" content="标签：JavaScript– 该部分是我学习引用类型时做的笔记，下面直入主题。
+正则表达式规则ECMAScript通过RegExp类型来支持正则表达式，可以通过以下途径创建：
+var example = / pattern / flags ;
+pattern可以是任何形式的正则表达式，而flags则用以表明正则表达式的行为。flags由以下三种形式
+
+g：表示global，即模式将被用于所有字符串">
+<meta property="og:updated_time" content="2016-07-31T16:51:26.167Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JS引用类型之RegExp类型">
+<meta name="twitter:description" content="标签：JavaScript– 该部分是我学习引用类型时做的笔记，下面直入主题。
+正则表达式规则ECMAScript通过RegExp类型来支持正则表达式，可以通过以下途径创建：
+var example = / pattern / flags ;
+pattern可以是任何形式的正则表达式，而flags则用以表明正则表达式的行为。flags由以下三种形式
+
+g：表示global，即模式将被用于所有字符串">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2016/08/01/title- JS引用类型之RegExp类型/"/>
+
+  <title> JS引用类型之RegExp类型 | Momo </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Momo</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                JS引用类型之RegExp类型
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-08-01T00:46:06+08:00" content="2016-08-01">
+              2016-08-01
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>标签：JavaScript<br>– 该部分是我学习引用类型时做的笔记，下面直入主题。</p>
+<h2 id="正则表达式规则"><a href="#正则表达式规则" class="headerlink" title="正则表达式规则"></a>正则表达式规则</h2><p>ECMAScript通过RegExp类型来支持正则表达式，可以通过以下途径创建：</p>
+<pre><code>var example = / pattern / flags ;
+</code></pre><p>pattern可以是任何形式的正则表达式，而flags则用以表明正则表达式的行为。flags由以下三种形式</p>
+<ul>
+<li>g：表示global，即模式将被用于所有字符串，并不因为寻找到了匹配项而停止。</li>
+<li>i：表示case-insensitive，对大小写不敏感。</li>
+<li><p>m：表示多行模式，即会自动换行寻找匹配项。</p>
+<pre><code>var pattern1  =/\[bc\]at/i；//表示匹配第一个“[bc]at”,不区分大小写。
+
+var pattern2 =/.at/gi ;   //表示匹配所有以at为结尾的字符组合，不区分大小写。
+
+var pattern3 = /[bc]at/g ;    //表示匹配所有“bat”或“cat”。 
+</code></pre></li>
+</ul>
+<p>同时还可以使用构造函数创建：</p>
+<pre><code>如var pattern4 = new RegExp(&quot;[bc]at&quot;,&quot;i&quot;);//这与pattern1完全相等。
+</code></pre><p>但要注意，不能把正则表达式字面量传递给构造函数。由于RegExp构造函数的模式参数是字符串，所以某些情况下需要双重转义。</p>
+<p><code>字面量模式</code>   <code>等价字符串</code><br><code>/\[bc\]at/</code>                  <code>&quot;\\[bc\\]at&quot;</code><br><code>/\.at/</code>                      <code>&quot;\\.at&quot;</code><br><code>/name\/gae/</code>                 <code>&quot;name\\/age&quot;</code><br><code>/\d.\d{1,2}/</code>                <code>&quot;\\a.\\d{1,2}&quot;</code></p>
+<h2 id="使用正则表达式字面量与使用RegExp构造函数创建正则表达式的区别"><a href="#使用正则表达式字面量与使用RegExp构造函数创建正则表达式的区别" class="headerlink" title="使用正则表达式字面量与使用RegExp构造函数创建正则表达式的区别"></a>使用正则表达式字面量与使用RegExp构造函数创建正则表达式的区别</h2><p>JavaScript高程中提到，在ECMAScript3中，正则表达式字面量始终共用一个实例，而后者则每次都创建一个新实例。</p>
+<p>下面来看书上的例子：</p>
+<pre><code>var re = null ,
+i;
+
+for ( i=0 ;i &lt; 10 ;i++)
+{
+    re=/cat/g;
+    re.test(&quot;catastrophe&quot;);
+}
+
+for ( i=0 ;i &lt; 10 ;i++ )
+{
+    re = new RegExp(&quot;cat&quot;,&quot;g&quot;);
+    re.test(&quot;catastrophe&quot;);
+}
+</code></pre><p>第一个循环共用一个实例，所以第一次匹配到cat后，第二次是从上一次匹配的末尾开始，所以返回false。而第二个循环每次新建一个实例，每次都可以找到“cat”，故返回true。<br>而ECMAScript5规定使用正则表达式字面量必须每次都创建一个实例。</p>
+<h2 id="RegExp实例属性"><a href="#RegExp实例属性" class="headerlink" title="RegExp实例属性"></a>RegExp实例属性</h2><ul>
+<li>global：布尔值，表示是否设置了g标志。</li>
+<li>ignoreCase:布尔值，表示是否设置了i标志。</li>
+<li>lastIndex:表示开始搜索下一个匹配项的字符位置，从0算起。</li>
+<li>multiline：布尔值，表示是否设置了m属性。</li>
+<li>source：正则表达式的字符串表示（按照字面量形式返回）。</li>
+</ul>
+<h2 id="RegExp实例方法"><a href="#RegExp实例方法" class="headerlink" title="RegExp实例方法"></a>RegExp实例方法</h2><h3 id="exec"><a href="#exec" class="headerlink" title="exec( )"></a>exec( )</h3><p>该方法主要用于捕获组。exec（）接受一个字符串，然后返回包含第一个匹配信息的数组，或返回null。其中还包含两个属性，index（匹配项在字符串中的位置）和input（应用正则表达式的字符串）</p>
+<pre><code>var text =&quot;cat,bat,sat,fat&quot;;
+var pattern1 = /.at/;
+var matches = pattern1.exec(text);
+alert(matches.index);//0
+alert(matches[0]);//cat
+alert(pattern1.lastIndex);//0
+</code></pre><p>在全局模式下，lastIndex每次调用exec（）后都会改变，而非全局则不会。（IE浏览器除外）。</p>
+<h3 id="text（）"><a href="#text（）" class="headerlink" title="text（）"></a>text（）</h3><p>另外还有text（）方法，他接受字符串参数，然后判断他与某个模式是否匹配，返回true or false。</p>
+<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><p>toLocalString（）和toString（）均返回正则表达式字面量。<br>valueOf则返回正则表达式本身。</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/07/17/title- 谈谈css页面布局之浮动/" rel="next" title="谈谈css页面布局之浮动">
+                <i class="fa fa-chevron-left"></i> 谈谈css页面布局之浮动
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/08/15/title- 我的洪荒之力用完了/" rel="prev" title="我的洪荒之力用完了">
+                我的洪荒之力用完了 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://7xwgi3.com1.z0.glb.clouddn.com/dola.jpg"
+               alt="momo" />
+          <p class="site-author-name" itemprop="name">momo</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">5</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#正则表达式规则"><span class="nav-number">1.</span> <span class="nav-text">正则表达式规则</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用正则表达式字面量与使用RegExp构造函数创建正则表达式的区别"><span class="nav-number">2.</span> <span class="nav-text">使用正则表达式字面量与使用RegExp构造函数创建正则表达式的区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RegExp实例属性"><span class="nav-number">3.</span> <span class="nav-text">RegExp实例属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RegExp实例方法"><span class="nav-number">4.</span> <span class="nav-text">RegExp实例方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#exec"><span class="nav-number">4.1.</span> <span class="nav-text">exec( )</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#text（）"><span class="nav-number">4.2.</span> <span class="nav-text">text（）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#其他"><span class="nav-number">4.3.</span> <span class="nav-text">其他</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">momo</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
